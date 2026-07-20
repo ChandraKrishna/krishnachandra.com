@@ -1,0 +1,2 @@
+import { ContactForm } from '@/components/contact/ContactForm';
+export default function Contact(){return <section className="py-20"><div className="grid gap-10 md:grid-cols-[.8fr_1.2fr]"><div><p className="text-sm uppercase tracking-[.2em] text-blue-500">Contact</p><h1 className="mt-3 text-4xl font-semibold">Discuss performance, scalability or engineering leadership.</h1><p className="mt-5 text-slate-600 dark:text-slate-400">Use the form for professional opportunities, consulting discussions or collaboration.</p></div><ContactForm/></div></section>}

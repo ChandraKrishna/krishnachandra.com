@@ -1,0 +1,1 @@
+export const siteMetadata = { title: 'Krishna Chandra | Performance Engineering Leader', description: 'Portfolio of Krishna Chandra, a performance engineering leader specialising in scalability, automation, cloud and observability.' };

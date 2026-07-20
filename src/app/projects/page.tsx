@@ -1,0 +1,2 @@
+import { projects } from '@/content/projects';import { ProjectCard } from '@/components/projects/ProjectCard';
+export default function ProjectsPage(){return <section className="py-20"><h1 className="text-4xl font-semibold">Projects</h1><p className="mt-4 max-w-2xl text-slate-600 dark:text-slate-400">Selected platforms, frameworks and engineering initiatives.</p><div className="mt-10 grid gap-6 md:grid-cols-2">{projects.map(p=><ProjectCard key={p.slug} project={p}/>)}</div></section>}

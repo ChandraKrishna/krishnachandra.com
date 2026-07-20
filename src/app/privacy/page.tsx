@@ -1,0 +1,1 @@
+export default function Privacy(){return <section className="py-20"><h1 className="text-4xl font-semibold">Privacy</h1><p className="mt-6 max-w-3xl text-slate-600 dark:text-slate-400">This portfolio collects only information voluntarily submitted through the contact form. Configure your production email provider and privacy policy before deployment.</p></section>}
