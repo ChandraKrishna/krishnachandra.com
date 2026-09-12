@@ -1,2 +1,0 @@
-import { NextResponse } from 'next/server';import { contactSchema } from '@/lib/validation';
-export async function POST(request:Request){try{const body=await request.json();const result=contactSchema.safeParse(body);if(!result.success)return NextResponse.json({error:'Invalid form data',details:result.error.flatten()},{status:400});return NextResponse.json({ok:true,message:'Validated. Connect an email provider in production.'});}catch{return NextResponse.json({error:'Invalid request'},{status:400})}}
