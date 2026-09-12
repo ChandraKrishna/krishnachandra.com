@@ -39,8 +39,7 @@ jobs:
       - name: Build static website
         run: npm run build
         env:
-          NEXT_PUBLIC_SITE_URL: https://chandrakrishna.github.io/krishnachandra-portfolio
-          NEXT_PUBLIC_BASE_PATH: /krishnachandra-portfolio
+          NEXT_PUBLIC_SITE_URL: https://krishnachandra.com
 
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v3
