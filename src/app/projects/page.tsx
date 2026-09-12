@@ -1,2 +1,4 @@
-import { projects } from '@/content/projects';import { ProjectCard } from '@/components/projects/ProjectCard';
-export default function ProjectsPage(){return <section className="py-20"><h1 className="text-4xl font-semibold">Projects</h1><p className="mt-4 max-w-2xl text-slate-600 dark:text-slate-400">Selected platforms, frameworks and engineering initiatives.</p><div className="mt-10 grid gap-6 md:grid-cols-2">{projects.map(p=><ProjectCard key={p.slug} project={p}/>)}</div></section>}
+import { projects } from '@/content/projects';
+import { ProjectCard } from '@/components/projects/ProjectCard';
+
+export default function ProjectsPage(){return <section className="py-20"><p className="eyebrow">Selected work</p><h1 className="section-title mt-5">Complex systems. Clear engineering outcomes.</h1><p className="mt-6 max-w-3xl text-lg leading-8 text-slate-400">A selection of programmes and product work spanning investment services, retail cloud readiness, and performance intelligence. Details are framed to protect client confidentiality.</p><div className="mt-14 grid gap-6 lg:grid-cols-3">{projects.map((p,index)=><ProjectCard key={p.slug} project={p} index={index}/>)}</div></section>}

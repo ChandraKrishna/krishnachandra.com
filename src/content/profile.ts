@@ -1,11 +1,12 @@
 import type { Profile } from '@/types/profile';
 export const profile: Profile = {
   name: 'Krishna Chandra',
-  title: 'Performance Engineering Leader | Assistant Manager',
-  tagline: 'Engineering scalable, resilient and high-performing digital systems through performance engineering, automation, cloud technologies and intelligent observability.',
-  location: 'Delhi NCR, India',
+  title: 'Assistant Manager · Performance Engineering & Testing',
+  tagline: 'I help enterprise teams ship faster, scale confidently, and find performance bottlenecks before customers do—with performance engineering, automation, observability, and AI-assisted analysis.',
+  location: 'Noida, Delhi-NCR, India',
   experienceYears: '10+',
-  email: 'TODO: Replace with verified email',
+  email: 'er.krishnachandra@gmail.com',
+  phone: '9812315537',
+  website: 'https://www.krishnachandra.com/',
   linkedin: 'https://www.linkedin.com/in/krishnachandraofficial/',
-  github: 'TODO: Replace with GitHub profile URL'
 };

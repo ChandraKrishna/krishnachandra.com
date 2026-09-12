@@ -1,1 +1,1 @@
-export interface Project { slug: string; title: string; category: string; status: string; summary: string; problem: string; solution: string; stack: string[]; features: string[]; }
+export interface Project { slug: string; title: string; category: string; status: string; period: string; organization: string; summary: string; problem: string; solution: string; stack: string[]; features: string[]; }

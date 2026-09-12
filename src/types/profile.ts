@@ -1,1 +1,1 @@
-export interface Profile { name: string; title: string; tagline: string; location: string; experienceYears: string; email: string; linkedin: string; github: string; }
+export interface Profile { name: string; title: string; tagline: string; location: string; experienceYears: string; email?: string; phone?: string; website?: string; linkedin: string; github?: string; }

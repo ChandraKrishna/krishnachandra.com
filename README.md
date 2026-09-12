@@ -14,12 +14,9 @@ Open http://localhost:3000.
 
 ## Before deployment
 
-1. Replace all `TODO:` values in `src/content`.
-2. Add a professional portrait under `public/images/profile` and wire it into `HeroSection.tsx`.
-3. Add `public/documents/krishna-chandra-resume.pdf`.
-4. Configure a real email provider in `src/app/api/contact/route.ts`.
-5. Set `NEXT_PUBLIC_SITE_URL` in production.
-6. Add verified role dates, achievements, education and certifications.
+1. Set `NEXT_PUBLIC_SITE_URL` to the production domain.
+2. Confirm the inferred 2024 start date for the current role.
+3. Add a verified email, GitHub profile, portrait, or résumé only when those assets are available.
 
 ## Deploy
 
