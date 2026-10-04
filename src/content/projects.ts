@@ -2,6 +2,19 @@ import type { Project } from '@/types/project';
 
 export const projects: Project[] = [
   {
+    slug: 'oracle-inform-suite',
+    title: 'Oracle Inform Suite',
+    category: 'Enterprise Healthcare',
+    status: 'Delivered',
+    period: 'Oct 2024 - May 2026',
+    organization: 'Oracle',
+    summary: 'Performance engineering for Oracle Inform Suite, supporting reliable application behaviour as enterprise workloads and release demands evolved.',
+    problem: 'The application needed clear evidence of how it behaved under realistic demand, along with focused analysis to help teams identify and address performance risk before release.',
+    solution: 'Designed and ran performance test scenarios, examined application and infrastructure signals, and translated findings into practical recommendations for more dependable releases.',
+    stack: ['JMeter', 'LoadRunner', 'Oracle Enterprise Manager', 'SQL', 'APM'],
+    features: ['Created workload models aligned to critical user journeys', 'Executed load, stress, and endurance test scenarios', 'Analysed application, database, and infrastructure performance signals', 'Investigated bottlenecks and contributed to root-cause analysis', 'Shared concise performance findings and release-readiness recommendations'],
+  },
+  {
     slug: 'bravura-solution-sonata',
     title: 'Bravura Solution - Sonata',
     category: 'Asset Maintenance',

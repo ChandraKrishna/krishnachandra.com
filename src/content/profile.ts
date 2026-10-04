@@ -5,7 +5,7 @@ export const profile: Profile = {
   tagline: 'I help enterprise teams ship faster, scale confidently, and find performance bottlenecks before customers do—with performance engineering, automation, observability, and AI-assisted analysis.',
   location: 'Noida, Delhi-NCR, India',
   experienceYears: '10+',
-  email: 'er.krishnachandra@gmail.com',
+  email: 'info@krishnachandra.com',
   phone: '9812315537',
   website: 'https://www.krishnachandra.com/',
   linkedin: 'https://www.linkedin.com/in/krishnachandraofficial/',
