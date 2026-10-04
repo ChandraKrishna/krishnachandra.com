@@ -1,0 +1,13 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "krishna-contact",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-10-04",
+  "workers_dev": true,
+  "vars": {
+    "ALLOWED_ORIGINS": "https://krishnachandra.com,https://www.krishnachandra.com,http://localhost:3000"
+  },
+  "secrets": {
+    "required": ["MAILJET_API_KEY", "MAILJET_SECRET_KEY", "MAILJET_SENDER_EMAIL", "MAILJET_SENDER_NAME", "CONTACT_TO_EMAIL"]
+  }
+}
