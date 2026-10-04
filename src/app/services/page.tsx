@@ -1,5 +1,13 @@
 import Link from 'next/link';
+import type { Metadata } from 'next';
 import { ArrowUpRight, Check } from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: 'Logo, Packaging, Website & Android App Services',
+  description: 'Creative and digital services including logo design, pamphlets, interior and exterior concepts, website creation, Android apps, stickers, covers and packaging.',
+  keywords: ['logo design', 'pamphlet design', 'interior design', 'exterior design', 'website creation', 'Android app development', 'product sticker design', 'cover design', 'packaging design'],
+  alternates: { canonical: '/services/' },
+};
 
 const services = [
   {

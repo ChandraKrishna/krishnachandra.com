@@ -1,7 +1,20 @@
 import Link from 'next/link';
+import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { ArrowLeft, Check } from 'lucide-react';
 import { insights } from '@/content/insights';
 
 export function generateStaticParams(){return insights.map(post=>({slug:post.slug}))}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const post = insights.find(item => item.slug === slug);
+  if (!post) return {};
+  return {
+    title: post.title,
+    description: post.summary,
+    keywords: ['performance engineering', 'performance testing', 'JMeter', 'load testing', post.title],
+    alternates: { canonical: `/insights/${post.slug}/` },
+  };
+}
 export default async function Insight({params}:{params:Promise<{slug:string}>}){const {slug}=await params;const post=insights.find(item=>item.slug===slug);if(!post)notFound();return <article className="mx-auto max-w-4xl py-20"><Link href="/insights" className="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-cyan-400"><ArrowLeft className="h-4 w-4"/>All insights</Link><p className="eyebrow mt-12">Professional insight · {post.readTime}</p><h1 className="mt-5 text-5xl font-semibold leading-tight tracking-[-.04em] text-white md:text-6xl">{post.title}</h1><p className="mt-7 text-xl leading-9 text-slate-400">{post.summary}</p><div className="mt-16 space-y-14">{post.sections.map((section,index)=><section key={section.heading} className="grid gap-5 md:grid-cols-[3rem_1fr]"><span className="text-sm text-cyan-400">0{index+1}</span><div><h2 className="text-2xl font-semibold text-white">{section.heading}</h2><p className="mt-4 leading-8 text-slate-300">{section.body}</p>{section.points&&<ul className="mt-5 space-y-3">{section.points.map(point=><li key={point} className="flex items-center gap-3 text-slate-400"><Check className="h-4 w-4 text-cyan-400"/>{point}</li>)}</ul>}</div></section>)}</div><div className="mt-16 rounded-3xl bg-cyan-400 p-8 text-slate-950"><h2 className="text-2xl font-semibold">Working through a similar challenge?</h2><p className="mt-2 text-slate-800">Let’s compare notes on performance strategy, tooling, or diagnosis.</p><Link href="/contact" className="mt-5 inline-flex rounded-full bg-slate-950 px-5 py-3 text-sm font-medium text-white">Start a conversation</Link></div></article>}
