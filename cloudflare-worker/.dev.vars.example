@@ -1,5 +1,5 @@
-MAILJET_API_KEY=
-MAILJET_SECRET_KEY=
-MAILJET_SENDER_EMAIL=info@krishnachandra.com
-MAILJET_SENDER_NAME=Krishna Chandra
-CONTACT_TO_EMAIL=info@krishnachandra.com
+MAILJET_API_KEY=your_mailjet_api_key
+MAILJET_SECRET_KEY=your_mailjet_secret_key
+MAILJET_SENDER_EMAIL=verified-sender@example.com
+MAILJET_SENDER_NAME=Your Name
+CONTACT_TO_EMAIL=recipient@example.com
