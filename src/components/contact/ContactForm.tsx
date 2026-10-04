@@ -5,6 +5,7 @@ import { useState } from "react";
 type ContactPayload = { name: string; email: string; phone: string; subject: string; message: string; website: string; consent: boolean };
 
 const fieldClass = "mt-2 w-full rounded-xl border border-slate-500/40 bg-slate-950/30 px-4 py-3 text-white outline-none transition placeholder:text-slate-600 focus:border-cyan-400/70 focus:ring-2 focus:ring-cyan-400/15";
+const contactEndpoint = process.env.NEXT_PUBLIC_CONTACT_ENDPOINT;
 
 export function ContactForm() {
   const [status, setStatus] = useState("");
@@ -19,10 +20,15 @@ export function ContactForm() {
     setIsSubmitting(true);
     setStatus("Sending your message...");
     try {
-      const response = await fetch("/api/contact/", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload) });
+      if (!contactEndpoint) {
+        setStatus("The contact form is not configured yet.");
+        return;
+      }
+      const response = await fetch(contactEndpoint, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload) });
       if (!response.ok) {
-        const result = await response.json().catch(() => null);
-        setStatus(result?.error ?? "Please check the form and try again.");
+        const result: unknown = await response.json().catch(() => null);
+        const error = typeof result === "object" && result !== null && "error" in result && typeof result.error === "string" ? result.error : "Please check the form and try again.";
+        setStatus(error);
         return;
       }
       setStatus("Thank you. Your message has been sent successfully.");
