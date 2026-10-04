@@ -3,6 +3,7 @@ node_modules
 out
 .env.local
 cloudflare-worker/.dev.vars
+cloudflare-worker/worker-configuration.d.ts
 coverage
 tmp/
 *.tsbuildinfo
