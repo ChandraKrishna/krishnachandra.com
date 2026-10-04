@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "krishna-contact",
+  "name": "krishnachandra-com",
   "main": "src/index.ts",
   "compatibility_date": "2026-10-04",
   "workers_dev": true,

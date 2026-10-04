@@ -2,6 +2,7 @@
   "name": "krishna-contact-worker",
   "private": true,
   "scripts": {
+    "build": "wrangler types",
     "dev": "wrangler dev",
     "deploy": "wrangler deploy"
   },
