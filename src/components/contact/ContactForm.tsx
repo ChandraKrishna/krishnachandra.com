@@ -5,9 +5,12 @@ import { useState } from "react";
 type ContactPayload = { name: string; email: string; phone: string; subject: string; message: string; website: string; consent: boolean };
 
 const fieldClass = "mt-2 w-full rounded-xl border border-slate-500/40 bg-slate-950/30 px-4 py-3 text-white outline-none transition placeholder:text-slate-600 focus:border-cyan-400/70 focus:ring-2 focus:ring-cyan-400/15";
-const contactEndpoint =
-  process.env.NEXT_PUBLIC_CONTACT_ENDPOINT ??
+const defaultContactEndpoint =
   "https://krishnachandra-com.krishnachandraofficial.workers.dev/contact";
+const configuredContactEndpoint = process.env.NEXT_PUBLIC_CONTACT_ENDPOINT?.trim();
+const contactEndpoint = configuredContactEndpoint?.startsWith("https://")
+  ? configuredContactEndpoint
+  : defaultContactEndpoint;
 
 export function ContactForm() {
   const [status, setStatus] = useState("");
