@@ -32,6 +32,6 @@ The Worker accepts submissions only from `krishnachandra.com`, `www.krishnachand
 
 ## Environment variable reference
 
-- Root `.env.local` contains only public browser settings: `NEXT_PUBLIC_SITE_URL`, optional `NEXT_PUBLIC_CONTACT_ENDPOINT`, and optional `NEXT_PUBLIC_ANALYTICS_ID`. For GitHub Pages, use the repository variable `CONTACT_ENDPOINT` (without the `NEXT_PUBLIC_` prefix).
+- Root `.env.local` contains browser settings: `NEXT_PUBLIC_SITE_URL`, optional `NEXT_PUBLIC_CONTACT_ENDPOINT`, and optional `PUBLIC_ANALYTICS_ID`. For GitHub Pages, use repository variables `CONTACT_ENDPOINT` and `PUBLIC_ANALYTICS_ID`.
 - `cloudflare-worker/.dev.vars` is for local Worker testing only. Copy the dummy values from `.dev.vars.example`; never commit real credentials.
 - In production, add the five Mailjet values as **Production runtime Secrets** in the Cloudflare Worker settings. Do not add them to GitHub Pages or expose them as browser variables.

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { trackAnalyticsEvent } from '@/lib/analytics';
 
 type ContactPayload = { name: string; email: string; phone: string; subject: string; message: string; website: string; consent: boolean };
 
@@ -33,6 +34,7 @@ export function ContactForm() {
         return;
       }
       setStatus("Thank you. Your message has been sent successfully.");
+      trackAnalyticsEvent('generate_lead', { form_name: 'contact_form' });
       formElement.reset();
     } catch {
       setStatus("Unable to submit the form. Please try again.");

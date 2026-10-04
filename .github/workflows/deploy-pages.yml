@@ -41,6 +41,7 @@ jobs:
         env:
           NEXT_PUBLIC_SITE_URL: https://krishnachandra.com
           NEXT_PUBLIC_CONTACT_ENDPOINT: ${{ vars.CONTACT_ENDPOINT }}
+          PUBLIC_ANALYTICS_ID: ${{ vars.PUBLIC_ANALYTICS_ID }}
 
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v3
