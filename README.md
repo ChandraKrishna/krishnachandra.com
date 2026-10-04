@@ -25,7 +25,13 @@ The portfolio remains a static GitHub Pages site. Its contact form sends request
 1. In `cloudflare-worker/`, run `npm install`, then copy `.dev.vars.example` to `.dev.vars` and add the Mailjet values for local Worker testing.
 2. Log in to Cloudflare and run `npm run deploy` from `cloudflare-worker/`. Note the deployed Worker URL, for example `https://krishnachandra-com.<account>.workers.dev`.
 3. In the Cloudflare Worker dashboard, add the same five Mailjet values as encrypted secrets: `MAILJET_API_KEY`, `MAILJET_SECRET_KEY`, `MAILJET_SENDER_EMAIL`, `MAILJET_SENDER_NAME`, and `CONTACT_TO_EMAIL`.
-4. In GitHub, add a repository variable named `CONTACT_ENDPOINT` with the Worker URL plus `/contact`. For this deployment, use `https://krishnachandra-com.krishnachandraofficial.workers.dev/contact`.
+4. The form defaults to `https://krishnachandra-com.krishnachandraofficial.workers.dev/contact`. To use a different Worker, add a GitHub Actions repository variable named `CONTACT_ENDPOINT` with its full `/contact` URL.
 5. Push to `main`. The GitHub Pages workflow builds the static `out/` folder and publishes it with the public endpoint embedded in the form.
 
 The Worker accepts submissions only from `krishnachandra.com`, `www.krishnachandra.com`, and local development. Add another origin to `cloudflare-worker/wrangler.jsonc` before deploying if you need one.
+
+## Environment variable reference
+
+- Root `.env.local` contains only public browser settings: `NEXT_PUBLIC_SITE_URL`, optional `NEXT_PUBLIC_CONTACT_ENDPOINT`, and optional `NEXT_PUBLIC_ANALYTICS_ID`.
+- `cloudflare-worker/.dev.vars` is for local Worker testing only. Copy the dummy values from `.dev.vars.example`; never commit real credentials.
+- In production, add the five Mailjet values as **Production runtime Secrets** in the Cloudflare Worker settings. Do not add them to GitHub Pages or expose them as browser variables.
