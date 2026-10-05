@@ -7,6 +7,7 @@ import { GoogleAnalytics } from '@/components/analytics/GoogleAnalytics';
 import { siteMetadata } from '@/content/siteMetadata';
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || siteMetadata.url;
+const faviconUrl = '/favicon-96x96.png';
 const analyticsId = process.env.PUBLIC_ANALYTICS_ID?.trim();
 const structuredData = {
   '@context': 'https://schema.org',
@@ -15,6 +16,7 @@ const structuredData = {
       '@type': 'Person',
       name: 'Krishna Chandra',
       url: siteMetadata.url,
+      image: `${siteMetadata.url}/icon-512.png`,
       jobTitle: 'Performance Engineering Leader',
       sameAs: ['https://www.linkedin.com/in/krishnachandraofficial/'],
       knowsAbout: siteMetadata.keywords.slice(1, 14),
@@ -42,7 +44,11 @@ export const metadata: Metadata = {
   publisher: 'Krishna Chandra',
   category: 'Professional services',
   robots: { index: true, follow: true },
-  icons: { icon: '/images/kkc-logo.png', apple: '/images/kkc-logo.png' },
+  manifest: '/manifest.webmanifest',
+  icons: {
+    icon: [{ url: faviconUrl, type: 'image/png', sizes: '96x96' }],
+    apple: [{ url: '/apple-touch-icon.png', type: 'image/png', sizes: '180x180' }],
+  },
   openGraph: {
     type: 'website',
     url: '/',
