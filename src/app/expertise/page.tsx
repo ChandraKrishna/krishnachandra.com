@@ -1,6 +1,9 @@
 import Link from 'next/link';
 import { ArrowUpRight, Check } from 'lucide-react';
 import { expertise } from '@/content/expertise';
+import { pageMetadata } from '@/lib/pageMetadata';
+
+export const metadata = pageMetadata('Expertise', 'Performance strategy, workload modelling, test automation, observability, bottleneck analysis, and release-readiness expertise.', '/expertise/');
 
 const workflow=[['Discover','Define critical journeys, service-level expectations, data needs, and operational risk.'],['Model','Translate real traffic, concurrency, pacing, and growth assumptions into defensible workloads.'],['Engineer','Build maintainable scripts, environments, pipeline gates, and production-like test scenarios.'],['Observe','Correlate response time and throughput with application, database, infrastructure, and log signals.'],['Decide','Convert evidence into prioritised findings, capacity guidance, and release recommendations.']];
 

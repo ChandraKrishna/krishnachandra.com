@@ -1,6 +1,9 @@
 import Link from 'next/link';
 import { ArrowUpRight, MapPin } from 'lucide-react';
 import { experience } from '@/content/experience';
+import { pageMetadata } from '@/lib/pageMetadata';
+
+export const metadata = pageMetadata('Experience', 'Explore Krishna Chandra’s performance engineering experience across enterprise healthcare, finance, retail, aviation, and cloud systems.', '/experience/');
 
 const organisations = experience.reduce<Array<{company:string;location:string;roles:typeof experience}>>((groups, role) => {
   const existing = groups.find(group => group.company === role.company);

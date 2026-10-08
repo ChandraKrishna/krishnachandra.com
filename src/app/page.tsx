@@ -1,6 +1,13 @@
 import Link from 'next/link';
 import { ArrowUpRight, BookOpen, Building2, CheckCircle2, Gauge, Globe, House, LayoutTemplate, Network, Package, PenTool, Search, ShieldCheck, Smartphone, Tag } from 'lucide-react';
 import { HeroSection } from '@/components/home/HeroSection';
+import { pageMetadata } from '@/lib/pageMetadata';
+
+export const metadata = pageMetadata(
+  'Performance Engineering, Design & Digital Solutions',
+  'Performance engineering, load testing, observability, creative design, website creation and Android app development.',
+  '/',
+);
 
 const outcomes = [
   { icon: Gauge, title: 'Performance by design', text: 'Workload models and test strategies grounded in real user behaviour.' },

@@ -1,6 +1,9 @@
 import Link from 'next/link';
 import { ArrowUpRight, Award, Building2, CalendarRange, GraduationCap, HeartHandshake } from 'lucide-react';
 import { profile } from '@/content/profile';
+import { pageMetadata } from '@/lib/pageMetadata';
+
+export const metadata = pageMetadata('About', 'Meet Krishna Chandra, a performance engineering leader focused on reliable systems and evidence-led delivery.', '/about/');
 
 const principles = [
   ['Evidence before opinion', 'Measure the system, reproduce the behaviour, and let data guide the decision.'],
