@@ -37,7 +37,6 @@ export const metadata: Metadata = {
   description: siteMetadata.description,
   keywords: siteMetadata.keywords,
   metadataBase: new URL(siteUrl),
-  alternates: { canonical: '/' },
   applicationName: 'Krishna Chandra Portfolio',
   authors: [{ name: 'Krishna Chandra', url: siteMetadata.url }],
   creator: 'Krishna Chandra',

@@ -2,6 +2,9 @@ import Link from 'next/link';
 import { ArrowUpRight, Linkedin, Mail, MapPin, MessageSquareText } from 'lucide-react';
 import { ContactForm } from '@/components/contact/ContactForm';
 import { profile } from '@/content/profile';
+import { pageMetadata } from '@/lib/pageMetadata';
+
+export const metadata = pageMetadata('Contact', 'Contact Krishna Chandra about performance engineering, consulting, creative design, websites, or Android application development.', '/contact/');
 
 const topics = ['Performance strategy and test governance', 'JMeter or LoadRunner modernisation', 'Logo design and brand identity', 'Pamphlet, cover, sticker, and packaging design', 'Interior and exterior design concepts', 'Website creation and Android app development'];
 

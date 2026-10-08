@@ -1,4 +1,7 @@
 import Link from 'next/link';
+import { pageMetadata } from '@/lib/pageMetadata';
+
+export const metadata = pageMetadata('Privacy', 'Privacy information for the Krishna Chandra portfolio website.', '/privacy/');
 
 export default function Privacy() {
   return <section className="mx-auto max-w-3xl py-20">
